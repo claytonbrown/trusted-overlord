@@ -1,7 +1,5 @@
 package com.beeva.trustedoverlord.dao;
 
-import com.beeva.trustedoverlord.clients.SupportClient;
-import com.beeva.trustedoverlord.model.ProfileChecks;
 import com.beeva.trustedoverlord.model.ProfileHealth;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
