@@ -17,6 +17,10 @@ public class TrustedOverlordMain {
 
         if (args.length < 1) {
             logger.error("Invalid number of arguments please provide at least one AWS profile name");
+            logger.error("Usage:");
+            logger.error("$ java -jar trustedoverlord-reporter.jar <aws_profile1> <aws_profile2> ...");
+            logger.error("Example:");
+            logger.error("$ java -jar trustedoverlord-reporter.jar myproject-dev myproject-prod anotherproject-dev anotherproject-prod");
             return;
         }
 
