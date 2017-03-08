@@ -49,7 +49,7 @@ public class TrustedAdvisorDynamoDBDao implements TrustedAdvisorDao {
                     .withMap("info", infoMap));
             logger.info("PutItem succeeded: " + type + " " + date);
         } catch (Exception e) {
-            logger.info("Unable to add item: " + type + " " + date);
+            logger.error("Unable to add item: " + type + " " + date);
         }
 
         return true;
