@@ -17,9 +17,7 @@ import java.util.*;
 import java.util.concurrent.Future;
 import java.util.concurrent.CompletableFuture;
 
-/**
- * Created by gonzaloramos on 13/02/17.
- */
+
 public class TrustedAdvisorDynamoDBDao implements TrustedAdvisorDao {
     private AmazonDynamoDBAsync dynamoClient;
 

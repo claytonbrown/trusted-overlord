@@ -7,9 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.CompletableFuture;
 
-/**
- * Created by gonzaloramos on 13/02/17.
- */
+
 public interface TrustedAdvisorDao {
     static Logger logger = LogManager.getLogger(TrustedAdvisorDao.class);
 

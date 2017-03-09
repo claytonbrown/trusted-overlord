@@ -12,9 +12,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-/**
- * Created by gonzaloramos on 13/02/17.
- */
+
 public class SupportDynamoDBDao implements SupportDao {
     public boolean saveData(String profileName, ProfileSupportCases profileSupportCases) {
         AmazonDynamoDBAsync client = AmazonDynamoDBAsyncClientBuilder.standard().withEndpointConfiguration(
