@@ -1,8 +1,8 @@
 package com.beeva.trustedoverlord.dao;
 
 import com.amazonaws.client.builder.AwsClientBuilder;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBAsync;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBAsyncClientBuilder;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.Table;
@@ -17,7 +17,7 @@ import java.util.*;
  */
 public class HealthDynamoDBDao implements HealthDao {
     public boolean saveData(String profileName, ProfileHealth profileHealth) {
-        AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().withEndpointConfiguration(
+        AmazonDynamoDBAsync client = AmazonDynamoDBAsyncClientBuilder.standard().withEndpointConfiguration(
                 new AwsClientBuilder.EndpointConfiguration(System.getenv("AWS_DYNAMODB_ENDPOINT"),
                         System.getenv("AWS_DYNAMODB_REGION")))
                 .build();

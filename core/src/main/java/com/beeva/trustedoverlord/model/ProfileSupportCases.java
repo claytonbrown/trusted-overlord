@@ -48,7 +48,7 @@ public class ProfileSupportCases {
         return this.resolvedCases;
     }
 
-    public class Case{
+    public static class Case{
         private String id;
         private String created;
         private String status;
