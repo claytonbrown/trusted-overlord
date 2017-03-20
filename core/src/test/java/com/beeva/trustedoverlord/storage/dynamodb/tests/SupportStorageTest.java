@@ -1,8 +1,7 @@
-package com.beeva.trustedoverlord.dao.tests;
+package com.beeva.trustedoverlord.storage.dynamodb.tests;
 
-import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.model.PutItemResult;
-import com.beeva.trustedoverlord.dao.SupportDynamoDBDao;
+import com.beeva.trustedoverlord.storage.dynamodb.SupportStorage;
 import com.beeva.trustedoverlord.model.ProfileSupportCases;
 import org.awaitility.Awaitility;
 import org.junit.Assert;
@@ -25,7 +24,7 @@ import static org.mockito.Mockito.when;
  * Created by Beeva
  */
 @RunWith(MockitoJUnitRunner.class)
-public class SupportDynamoDBDaoTest {
+public class SupportStorageTest {
 
     @Mock
     private ProfileSupportCases mockSupportCases;
@@ -65,13 +64,13 @@ public class SupportDynamoDBDaoTest {
 
         try {
             // Calls the method
-            SupportDynamoDBDao supportDAO = new SupportDynamoDBDao();
+            SupportStorage supportStorage = new SupportStorage();
             CompletableFuture<PutItemResult> future = new CompletableFuture<>();
-            supportDAO.saveDataAsync("test-profile", mockSupportCases, future);
+            supportStorage.save("test-profile", mockSupportCases, future);
 
             Awaitility.await().until(future::isDone);
         } catch (Exception e) {
-            System.out.print("No DynamodbDB");
+            System.out.print("No DynamoDB");
         }
         Assert.assertThat(true, is(true));
     }

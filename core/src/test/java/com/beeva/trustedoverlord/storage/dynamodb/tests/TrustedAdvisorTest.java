@@ -1,13 +1,7 @@
-package com.beeva.trustedoverlord.dao.tests;
+package com.beeva.trustedoverlord.storage.dynamodb.tests;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.client.builder.AwsClientBuilder;
-import com.amazonaws.handlers.AsyncHandler;
 import com.amazonaws.services.dynamodbv2.model.PutItemResult;
-import com.amazonaws.services.support.AWSSupportAsync;
-import com.amazonaws.services.support.model.*;
-import com.beeva.trustedoverlord.dao.TrustedAdvisorDynamoDBDao;
-import com.beeva.trustedoverlord.clients.TrustedAdvisorClient;
+import com.beeva.trustedoverlord.storage.dynamodb.TrustedAdvisorStorage;
 import com.beeva.trustedoverlord.model.ProfileChecks;
 import org.awaitility.Awaitility;
 import org.junit.Assert;
@@ -20,11 +14,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Locale;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -33,7 +24,7 @@ import static org.mockito.Mockito.*;
  * Created by Beeva
  */
 @RunWith(MockitoJUnitRunner.Silent.class)
-public class TrustedAdvisorDynamoDBDaoTest {
+public class TrustedAdvisorTest {
 
     @Mock
     private ProfileChecks mockProfile;
@@ -61,9 +52,9 @@ public class TrustedAdvisorDynamoDBDaoTest {
 
         try {
             // Calls the method
-            TrustedAdvisorDynamoDBDao trustedDAO = new TrustedAdvisorDynamoDBDao();
+            TrustedAdvisorStorage trustedStorage = new TrustedAdvisorStorage();
             CompletableFuture<PutItemResult> future = new CompletableFuture<>();
-            trustedDAO.saveDataAsync("test-profile", mockProfile, future);
+            trustedStorage.save("test-profile", mockProfile, future);
 
             Awaitility.await().until(future::isDone);
         } catch (Exception e) {
