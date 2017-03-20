@@ -58,7 +58,7 @@ public class TrustedAdvisorTest {
 
             Awaitility.await().until(future::isDone);
         } catch (Exception e) {
-            System.out.print("No DynamodbDB");
+            System.out.print("No DynamoDB");
         }
         Assert.assertThat(true, is(true));
     }

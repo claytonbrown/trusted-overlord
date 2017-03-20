@@ -59,8 +59,8 @@ public class SupportStorageTest {
                 .withSubmittedBy("submittedby3"));
 
 
-        when(mockSupportCases.getOpenCases()).thenReturn(openSupportCases);
-        when(mockSupportCases.getResolvedCases()).thenReturn(resolvedSupportCases);
+        //when(mockSupportCases.getOpenCases()).thenReturn(openSupportCases);
+        //when(mockSupportCases.getResolvedCases()).thenReturn(resolvedSupportCases);
 
         try {
             // Calls the method
