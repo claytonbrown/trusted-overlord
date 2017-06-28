@@ -7,9 +7,6 @@ import com.amazonaws.auth.profile.ProfilesConfigFile;
 import com.amazonaws.auth.profile.internal.BasicProfile;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClientBuilder;
 
-import java.util.function.Supplier;
-
-
 /**
  * Created by BEEVA
  */
